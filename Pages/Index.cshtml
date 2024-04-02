@@ -3,8 +3,18 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<h3>Add Todo</h3>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<form>
+ <input type="text" id="add new to do" />
+ <button type="submit">Add</button>
+</form>
+
+<h3>Todo List</h3>
+
+<ul>
+    @foreach (var item in Model.TodoItems)
+    {
+        <li>@item.Description</li>
+    }
+</ul>
